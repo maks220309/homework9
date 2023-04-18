@@ -3,9 +3,8 @@ const mongoose = require('mongoose')
 const userRoutes = require('./routes/route')
 const path = require('path')
 require('dotenv').config()
-const db = process.env.U_RL// !ССЫЛКА НА ВАШУ БД!
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.U_RL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(res => { console.log('connected to DB') })
   .catch(error => { console.log(error) })
 const app = express()
